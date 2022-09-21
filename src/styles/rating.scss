@@ -1,0 +1,54 @@
+$starSize: 40px;
+
+.rating {
+  display: flex;
+  font-size: $starSize;
+  line-height: 0.75;
+  word-wrap: normal;
+}
+.rating__body {
+  position: relative;
+
+  &:before {
+    content: '★★★★★';
+    display: block;
+    color: rgb(170, 170, 170);
+  }
+}
+.rating__active {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  &:before {
+    content: '★★★★★';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #ffd300;
+  }
+}
+
+.rating__items {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.rating__item {
+  flex: 0 0 20%;
+  height: 100%;
+  opacity: 0;
+}
+
+.rating__value {
+  line-height: 1;
+  padding-left: 10px;
+}

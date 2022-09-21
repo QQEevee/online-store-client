@@ -1,0 +1,30 @@
+.admin__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  h4 {
+    width: max-content;
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+  .admin__card {
+    h4 {
+      font-size: 20px;
+    }
+    .btn {
+      font-size: 14px;
+    }
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  .admin__card {
+    display: block;
+    h4 {
+      width: 100%;
+    }
+  }
+}

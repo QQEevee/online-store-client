@@ -1,0 +1,89 @@
+.nav__body {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 24px;
+  color: #fff;
+}
+
+.menu {
+  display: none;
+  position: relative;
+}
+
+.navigation {
+  display: flex;
+
+  .btn {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  %burgerpart {
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 3;
+  }
+
+  .menu {
+    display: block;
+
+    width: 30px;
+    height: 20px;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    right: 0;
+
+    span {
+      @extend %burgerpart;
+      top: 9px;
+    }
+    &:after,
+    &:before {
+      content: '';
+      @extend %burgerpart;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  }
+  .navigation {
+    position: absolute;
+    background-color: rgb(33, 37, 41);
+    height: 100vh;
+    z-index: 2;
+    right: 0;
+    top: 52px;
+    padding: 30px 15px 0;
+    width: max-content;
+    transform: translate(100%, 0);
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    transition: transform 0.2s;
+
+    overflow-y: scroll;
+
+    &.active {
+      transform: translate(0, 0);
+    }
+
+    & .btn {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  }
+}
